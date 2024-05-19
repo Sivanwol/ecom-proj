@@ -1,6 +1,24 @@
+const plausiblePlugin = withPlausibleProxy
+const bundleAnalyzer = withBundleAnalyzer()
+const nextTranslate = require('next-translate-plugin')
+
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    transpilePackages: ['lucide-react']
-};
+    productionBrowserSourceMaps: process.env.APP_ENV === 'ANALYZE',
+    i18n: {
+        locales: ['en'],
+        defaultLocale: 'en',
+        localeDetection: false
+    },
 
-export default nextConfig;
+    transpilePackages: ['lucide-react'],
+    reactStrictMode: true,
+    images: {
+        formats: ['image/avif', 'image/webp'],
+        domains: []
+    }
+}
+
+const plugins = [nextTranslate, plausiblePlugin, nextTranslate]
+process.env.APP_ENV === 'ANALYZE' && plugins.push(bundleAnalyzer)
+module.exports = withPlugins(plugins, nextConfig)
