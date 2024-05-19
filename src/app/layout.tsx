@@ -31,7 +31,7 @@ export default function RootLayout({
               <div id="lColumn" >&nbsp;</div>
               <div id="rColumn" className="flex items-center gap-10 overflow-hidden text-sm font-semibold transition-all duration-200" style={{ height: " 20px" }}>
                 <div className="hidden md:block">
-                  <a href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app" target="_blank" rel="noreferrer" className="text-white hover:text-theme_airship_purple-200 cursor-pointer">Add you'r Business</a>
+                  <a href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app" target="_blank" rel="noreferrer" className="text-white hover:text-theme_airship_purple-200 cursor-pointer">Add your Business</a>
                 </div>
                 <a href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app" target="_blank" rel="noreferrer"  className="text-white hover:text-theme_airship_purple-200 cursor-pointer">Out Mission</a>
               </div>

@@ -8,7 +8,7 @@ import { withAxiom } from 'next-axiom';
 const bundleAnalyzer = withBundleAnalyzer()
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    productionBrowserSourceMaps: process.env.APP_ENV === 'ANALYZE',
+    productionBrowserSourceMaps: process.env.ANALYZE === 'true',
     i18n: {
         locales: ['en'],
         defaultLocale: 'en',
@@ -24,5 +24,5 @@ const nextConfig = {
 }
 
 const plugins = [nextTranslate, withPlausibleProxy, withAxiom]
-process.env.APP_ENV === 'ANALYZE' && plugins.push(bundleAnalyzer)
+process.env.ANALYZE === 'true' && plugins.push(bundleAnalyzer)
 export default withPlugins(plugins, nextConfig)
