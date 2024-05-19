@@ -1,7 +1,11 @@
-const plausiblePlugin = withPlausibleProxy
-const bundleAnalyzer = withBundleAnalyzer()
-const nextTranslate = require('next-translate-plugin')
+import { withPlausibleProxy } from 'next-plausible'
+import withPlugins from 'next-compose-plugins'
+import withBundleAnalyzer from '@next/bundle-analyzer'
+import nextTranslate from 'next-translate-plugin'
+import { withAxiom } from 'next-axiom';
 
+
+const bundleAnalyzer = withBundleAnalyzer()
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     productionBrowserSourceMaps: process.env.APP_ENV === 'ANALYZE',
@@ -19,6 +23,6 @@ const nextConfig = {
     }
 }
 
-const plugins = [nextTranslate, plausiblePlugin, nextTranslate]
+const plugins = [nextTranslate, withPlausibleProxy, withAxiom]
 process.env.APP_ENV === 'ANALYZE' && plugins.push(bundleAnalyzer)
-module.exports = withPlugins(plugins, nextConfig)
+export default withPlugins(plugins, nextConfig)

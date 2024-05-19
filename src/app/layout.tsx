@@ -4,12 +4,9 @@ import "./globals.css";
 import '@radix-ui/themes/styles.css';
 import { Theme } from '@radix-ui/themes';
 import HeaderBar from "@app/components/headerBar";
-import { GoogleTagManager } from '@next/third-parties/google'
-import { DefaultSeo } from 'next-seo';
+import { AxiomWebVitals } from 'next-axiom';
 
 const inter = Inter({ subsets: ["latin"] });
-// import your default seo configuration
-import SEO from '@app/config/seo.config';
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -23,11 +20,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <DefaultSeo
-          openGraph={SEO.openGraph}
-          twitter={SEO.twitter}
-        />
-      <GoogleTagManager gtmId={process.env.GOOGLE_ID || ''} />
+      <head>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+      </head>
       <body className={inter.className}>
         <Theme>
           <div className="bg-search_mp-bg_white flex flex-col items-center">
@@ -37,7 +33,7 @@ export default function RootLayout({
                 <div className="hidden md:block">
                   <a href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app" target="_blank" rel="noreferrer" className="text-white hover:text-theme_airship_purple-200 cursor-pointer">Add you'r Business</a>
                 </div>
-                <a href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app" target="_blank" rel="noreferrer">Out Mission</a>
+                <a href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app" target="_blank" rel="noreferrer"  className="text-white hover:text-theme_airship_purple-200 cursor-pointer">Out Mission</a>
               </div>
             </div>
             <div className="w-full max-w-[1600px] pt-6 pb-36 lg:pb-10">
@@ -46,6 +42,7 @@ export default function RootLayout({
             </div>
           </div>
         </Theme>
+        <AxiomWebVitals />
       </body>
     </html>
   );

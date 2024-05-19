@@ -1,7 +1,8 @@
 {
-  "name": "publicsuqare",
+  "name": "publicsuqare-clone",
   "version": "0.1.0",
   "private": true,
+  "license": "private",
   "scripts": {
     "dev": "next dev --turbo",
     "generate": "drizzle-kit generate",
@@ -20,7 +21,6 @@
     "@emotion/styled": "^11.11.5",
     "@hookform/resolvers": "^3.3.2",
     "@neondatabase/serverless": "^0.9.3",
-    "@next/third-parties": "^14.2.3",
     "@radix-ui/react-accordion": "^1.1.2",
     "@radix-ui/react-alert-dialog": "^1.0.5",
     "@radix-ui/react-avatar": "^1.0.4",
@@ -54,7 +54,8 @@
     "lucide-react": "^0.378.0",
     "next": "14.2.3",
     "next-auth": "^5.0.0-beta.18",
-    "next-seo": "^6.5.0",
+    "next-axiom": "^1.2.0",
+    "next-plausible": "^3.12.0",
     "next-translate": "^2.6.2",
     "postgres": "^3.4.4",
     "prop-types": "^15.8.1",
@@ -71,12 +72,14 @@
     "zustand": "^4.5.2"
   },
   "devDependencies": {
+    "@next/bundle-analyzer": "^14.2.3",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "drizzle-kit": "^0.21.1",
     "eslint": "^8",
     "eslint-config-next": "14.2.3",
+    "next-compose-plugins": "^2.2.1",
     "next-translate-plugin": "^2.6.2",
     "postcss": "^8",
     "tailwind-merge": "^2.3.0",
